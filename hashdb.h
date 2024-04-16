@@ -1,5 +1,8 @@
 #include <pthread.h>  // For pthread_rwlock_t
+#include <pthread.h>
 #include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
 
 typedef struct hash_struct {
     uint32_t hash;
@@ -8,7 +11,7 @@ typedef struct hash_struct {
     struct hash_struct *next;
 } hashRecord;
 
-hashRecord *insert(const char *key, uint32_t salary);
-hashRecord *search(const char *key);
-hashRecord *delete(const char *key);
+hashRecord *insert(hashRecord *head, const char *key, uint32_t salary);
+hashRecord *search(hashRecord *head, const char *key);
+hashRecord *delete(hashRecord *head, const char *key);
 uint32_t hash(const uint8_t *name, size_t length);
