@@ -16,4 +16,8 @@ hashRecord *insert(hashRecord *head, const char *key, uint32_t salary);
 hashRecord *search(hashRecord *head, const char *key);
 hashRecord *delete(hashRecord *head, const char *key);
 uint32_t hash(const uint8_t *name, size_t length);
+void acquireWriteLock();
+void releaseWriteLock();
+void acquireReadLock();
+void releaseReadLock();
 void printList(hashRecord *head);
